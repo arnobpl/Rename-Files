@@ -5,6 +5,7 @@
 
 
 import os
+
 from NumerizeFiles import version, input_directory_path, listdir_no_hidden
 
 if __name__ == "__main__":
@@ -53,8 +54,9 @@ if __name__ == "__main__":
                 if confirm == "y":
                     print("Please wait...\n")
                     for filename in file_list_from_input:
-                        os.rename(os.path.join(path, filename),
-                                  os.path.join(path, eval(string, {"filename": filename, "__builtins__": {}}, {})))
+                        os.rename(os.path.join(input_path, filename),
+                                  os.path.join(input_path,
+                                               eval(string, {"filename": filename, "__builtins__": {}}, {})))
                         print(filename[:78])
                     input("\nFiles are successfully renamed.\nPress Enter to exit...")
                 else:
